@@ -14,6 +14,7 @@ onEvent('item.right_click', event => {
 	global.giveMoney(event.player, event.item.nbt.value * size, `${size}}x coinItem'`)
 
 	//Shrink the stack
+	if(event.player.isCreativeMode) return
 	event.item.count -= size
 })
 
